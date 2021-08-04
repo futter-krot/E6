@@ -1,5 +1,5 @@
 from pymemcache.client import base
-from flask import Flask, request
+from flask import jsonify, Flask, request
 import os
 
 app = Flask(__name__)
@@ -13,7 +13,7 @@ def get_fibo_num(k):
     if fibo is None:
         fibo = count_fibo_num(int(k))        
         memcache_client.set(k, fibo)
-    return int(fibo), 200
+    return jsonify(fibo=int(fibo)), 200
 
 def count_fibo_num(k):
     fibo, fibo_next = 0, 1
