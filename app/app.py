@@ -20,6 +20,3 @@ def count_fibo_num(k):
     for _ in range(k - 1):
         fibo, fibo_next = fibo_next, fibo + fibo_next
     return fibo
-
-if __name__ == '__main__':
-    app.run(debug=False, host='0.0.0.0', port=port) 
