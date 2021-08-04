@@ -1,0 +1,13 @@
+version: "3.7"
+services:
+    flask:
+        build: .
+        ports:
+            - "197412:197412"
+        network_mode: "host"
+        depends_on:
+            - memcached
+    memcached:
+        image: memcached:latest
+        ports:
+            - "11211:11211"
