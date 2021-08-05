@@ -1,9 +1,9 @@
-from pymemcache.client import base
+from pymemcache.client.base import Client
 from flask import jsonify, Flask, request
 import os
 
 app = Flask(__name__)
-memcache_client = base.Client(("localhost", 11211))
+memcache_client = Client(("localhost", 11211))
 
 
 @app.route('/<k>')
