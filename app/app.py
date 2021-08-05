@@ -9,7 +9,7 @@ memcache_client = Client(("localhost", 11211))
 @app.route('/<k>')
 def get_fibo_num(k):
     fibo = memcache_client.get(k)
-    fibo = None
+    print(fibo)
     if fibo is None:
         fibo = count_fibo_num(int(k))        
         memcache_client.set(k, fibo)
